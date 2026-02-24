@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/bg_white"
+    android:padding="32dp"
+    tools:context=".InicioSesionActivity">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <FrameLayout
+        android:layout_width="160dp"
+        android:layout_height="160dp">
+
+        <ImageView
+            android:id="@+id/iconoFocFitness"
+            android:layout_width="250dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:src="@drawable/focfitness"
+            android:contentDescription="Icono de la aplicación"
+            android:scaleType="centerInside" />
+
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="FocFitness"
+        android:textColor="@color/blue_primary"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Bienvenido a FocFitness"
+        android:textColor="@color/gray_mid"
+        android:textSize="17sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <EditText
+        android:id="@+id/etCorreo"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:hint="Correo electrónico"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/blue_primary"
+        android:textColorHint="@color/gray_mid"
+        android:background="@drawable/input_borde"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp" />
+
+    <EditText
+        android:id="@+id/etContrasena"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="14dp"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:textColor="@color/blue_primary"
+        android:textColorHint="@color/gray_mid"
+        android:background="@drawable/input_borde"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="24dp"
+        android:text="Iniciar sesión"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/bg_white"
+        android:background="@drawable/bg_iniciar"
+        android:backgroundTint="@null"/>
+
+    <Button
+        android:id="@+id/btnRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="12dp"
+        android:text="Registrarse"
+        android:textSize="15sp"
+        android:textColor="@color/blue_primary"
+        android:background="@drawable/bg_crear"
+        android:backgroundTint="@null"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="32dp" />
+
+</LinearLayout>
