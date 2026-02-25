@@ -29,7 +29,7 @@ public class InicioSesionActivity extends AppCompatActivity {
                 return;
             }
 
-            Intent intent = new Intent(InicioSesionActivity.this, MainActivity.class);
+            Intent intent = new Intent(InicioSesionActivity.this, HomeActivity.class);
             startActivity(intent);
         });
 

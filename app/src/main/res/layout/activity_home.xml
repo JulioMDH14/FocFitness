@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".HomeActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_primary"
+        android:gravity="center"
+        android:padding="24dp"
+        android:text="FocFitness"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:padding="16dp">
+
+        <FrameLayout
+            android:id="@+id/btnAlbolote"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/btn_pueblo"
+            android:clickable="true"
+            android:focusable="true"
+            android:clipToOutline="true"
+            android:outlineProvider="background">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/albolote"
+                android:scaleType="centerCrop"
+                android:contentDescription="Albolote"
+                android:alpha="0.5"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/btnLaZubia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/btn_pueblo"
+            android:clickable="true"
+            android:focusable="true"
+            android:clipToOutline="true"
+            android:outlineProvider="background">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/zubia"
+                android:scaleType="centerCrop"
+                android:contentDescription="La Zubia"
+                android:alpha="0.5"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="8dp"
+                android:text="LA ZUBIA"
+                android:textColor="@color/blue_primary"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/btnMaracena"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/btn_pueblo"
+            android:clickable="true"
+            android:focusable="true"
+            android:clipToOutline="true"
+            android:outlineProvider="background">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/maracena"
+                android:scaleType="centerCrop"
+                android:contentDescription="Maracena"
+                android:alpha="0.5"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="8dp"
+                android:text="MARACENA"
+                android:textColor="@color/blue_primary"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/btnArmilla"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/btn_pueblo"
+            android:clickable="true"
+            android:focusable="true"
+            android:clipToOutline="true"
+            android:outlineProvider="background">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/armilla"
+                android:scaleType="centerCrop"
+                android:contentDescription="Armilla"
+                android:alpha="0.5"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="8dp"
+                android:text="ARMILLA"
+                android:textColor="@color/blue_primary"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"
+            android:text="ALBOLOTE"
+            android:textColor="@color/blue_primary"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+    </GridLayout>
+
+</LinearLayout>

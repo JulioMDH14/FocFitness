@@ -23,6 +23,7 @@
 
         <activity android:name=".MainActivity" />
         <activity android:name=".RegistrarseActivity" />
+        <activity android:name=".HomeActivity" />
     </application>
 
 </manifest>

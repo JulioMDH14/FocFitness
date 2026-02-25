@@ -2,7 +2,7 @@
     <style name="Base.Theme.FocFitness" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/blue_primary</item>
         <item name="colorAccent">@color/blue_primary</item>
-        <item name="android:colorBackground">@color/bg_white</item>
+        <item name="android:colorBackground">@color/white</item>
     </style>
 
     <style name="Theme.FocFitness" parent="Base.Theme.FocFitness" />
