@@ -14,15 +14,15 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        btnAbolote.findViewById(R.id.btnAlbolote);
-        btnLaZubia.findViewById(R.id.btnLaZubia);
-        btnMaracena.findViewById(R.id.btnMaracena);
-        btnArmilla.findViewById(R.id.btnArmilla);
+        btnAbolote = findViewById(R.id.btnAlbolote);
+        btnLaZubia = findViewById(R.id.btnLaZubia);
+        btnMaracena = findViewById(R.id.btnMaracena);
+        btnArmilla = findViewById(R.id.btnArmilla);
 
         //TODO-03 Crear las Activity de cada pueblo
-        /*
+
         btnAbolote.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, AlboloteActivity.class);
+            Intent intent = new Intent(HomeActivity.this, AboloteActivity.class);
             startActivity(intent);
         });
 
@@ -37,10 +37,10 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         btnArmilla.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, Armillaactivity.class);
+            Intent intent = new Intent(HomeActivity.this, ArmillaActivity.class);
             startActivity(intent);
         });
-        */
+
 
     }
 }
