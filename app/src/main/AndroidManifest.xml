@@ -27,6 +27,7 @@
         <activity android:name=".MaracenaActivity" />
         <activity android:name=".ZubiaActivity" />
         <activity android:name=".ArmillaActivity" />
+        <activity android:name=".ConstruccionActivity" />
     </application>
 
 </manifest>
