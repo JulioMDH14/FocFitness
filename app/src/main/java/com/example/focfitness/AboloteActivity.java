@@ -49,10 +49,10 @@ public class AboloteActivity extends AppCompatActivity {
             Intent intent = new Intent(AboloteActivity.this, ReservasGimnasioActivity.class);
             startActivity(intent);
         });
-
+        */
         btnGaleria.setOnClickListener(v -> {
             Intent intent = new Intent(AboloteActivity.this, GaleriaActivity.class);
             startActivity(intent);
-        });*/
+        });
     }
 }
