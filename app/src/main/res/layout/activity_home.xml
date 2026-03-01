@@ -19,6 +19,57 @@
         android:textSize="40sp"
         android:textStyle="bold" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="@color/gray_light">
+
+        <ImageButton
+            android:id="@+id/btnMenu"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/menu_desplegable"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Menú Desplegable"
+            android:scaleType="centerInside" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/btnPerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/foto_perfil"
+                android:scaleType="centerInside"
+                android:contentDescription="Perfil" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="Perfil"
+                android:textColor="@color/blue_primary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -48,6 +99,15 @@
                 android:contentDescription="Albolote"
                 android:alpha="0.5"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="ALBOLOTE"
+                android:textColor="@color/blue_primary"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
         </FrameLayout>
 
         <FrameLayout
@@ -75,7 +135,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginBottom="8dp"
                 android:text="LA ZUBIA"
                 android:textColor="@color/blue_primary"
                 android:textSize="30sp"
@@ -108,7 +167,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginBottom="8dp"
                 android:text="MARACENA"
                 android:textColor="@color/blue_primary"
                 android:textSize="30sp"
@@ -141,25 +199,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginBottom="8dp"
                 android:text="ARMILLA"
                 android:textColor="@color/blue_primary"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
         </FrameLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:layout_gravity="center"
-            android:layout_marginBottom="8dp"
-            android:text="ALBOLOTE"
-            android:textColor="@color/blue_primary"
-            android:textSize="30sp"
-            android:textStyle="bold" />
 
     </GridLayout>
 

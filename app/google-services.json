@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "169355144663",
+    "project_id": "focfitness-55cab",
+    "storage_bucket": "focfitness-55cab.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:169355144663:android:1d3d0b9b4e44d041182f92",
+        "android_client_info": {
+          "package_name": "com.example.focfitness"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCo6W7IpPbi-4AZ0RwNOmvLQvy1TDHMDLY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
