@@ -28,6 +28,10 @@
         <activity android:name=".ZubiaActivity" />
         <activity android:name=".ArmillaActivity" />
         <activity android:name=".ConstruccionActivity" />
+        <activity android:name=".GaleriaActivity" />
+        <activity android:name=".ReservasActivity" />
+        <activity android:name=".ConfirmarReservaActivity" />
+        <activity android:name=".HorasActivity" />
     </application>
 
 </manifest>
