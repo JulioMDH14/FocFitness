@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".PerfilActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_primary"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="30dp">
+
+        <TextView
+            android:id="@+id/tvAvatar"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_crear" />
+
+        <TextView
+            android:id="@+id/tvNombrePerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/tvCorreoPerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="#BFDBFE"
+            android:layout_marginTop="4dp" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MIS DATOS"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/gray_mid"
+                android:layout_marginBottom="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_crear"
+                android:layout_marginBottom="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="14dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="24dp"
+                        android:layout_height="wrap_content"
+                        android:text="👤"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nombre"
+                            android:textSize="11sp"
+                            android:textColor="@color/gray_mid" />
+
+                        <TextView
+                            android:id="@+id/tvDatosNombre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#111827" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/gray_light" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="14dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="24dp"
+                        android:layout_height="wrap_content"
+                        android:text="👤"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Apellidos"
+                            android:textSize="11sp"
+                            android:textColor="@color/gray_mid" />
+
+                        <TextView
+                            android:id="@+id/tvDatosApellidos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#111827" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/gray_light" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="14dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="24dp"
+                        android:layout_height="wrap_content"
+                        android:text="📧"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Correo"
+                            android:textSize="11sp"
+                            android:textColor="@color/gray_mid" />
+
+                        <TextView
+                            android:id="@+id/tvDatosCorreo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#111827" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/gray_light" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="14dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="24dp"
+                        android:layout_height="wrap_content"
+                        android:text="📞"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Teléfono"
+                            android:textSize="11sp"
+                            android:textColor="@color/gray_mid" />
+
+                        <TextView
+                            android:id="@+id/tvDatosTelefono"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#111827" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnEditarPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Editar datos"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_iniciar"
+                android:backgroundTint="@null"
+                android:layout_marginBottom="12dp" />
+
+            <Button
+                android:id="@+id/btnCerrarSesion"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Cerrar sesión"
+                android:textColor="#DC2626"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_crear"
+                android:backgroundTint="@null" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

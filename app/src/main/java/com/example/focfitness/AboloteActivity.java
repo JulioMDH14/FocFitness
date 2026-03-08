@@ -30,16 +30,17 @@ public class AboloteActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        btnPerfil.setOnClickListener(v -> {
-            Intent intent = new Intent(AboloteActivity.this, PerfilActivity.class);
-            startActivity(intent);
-        });
 
         btnGimnasio.setOnClickListener(v -> {
             Intent intent = new Intent(AboloteActivity.this, ReservasGimnasioActivity.class);
             startActivity(intent);
         });
         */
+
+        btnPerfil.setOnClickListener(v -> {
+            Intent intent = new Intent(AboloteActivity.this, PerfilActivity.class);
+            startActivity(intent);
+        });
 
         btnReservas.setOnClickListener(v -> {
             Intent intent = new Intent(AboloteActivity.this, MisReservasActivity.class);
