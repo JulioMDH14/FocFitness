@@ -6,9 +6,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/focfitness"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/focfitness"
         android:supportsRtl="true"
         android:theme="@style/Theme.FocFitness"
         tools:targetApi="31">
@@ -32,6 +32,7 @@
         <activity android:name=".ReservasActivity" />
         <activity android:name=".ConfirmarReservaActivity" />
         <activity android:name=".HorasActivity" />
+        <activity android:name=".MisReservasActivity" />
     </application>
 
 </manifest>
