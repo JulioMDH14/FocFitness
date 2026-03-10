@@ -59,10 +59,11 @@ public class PerfilActivity extends AppCompatActivity {
                     }
                 });
 
-        btnEditarPerfil.setOnClickListener(v -> {
+        //TODO-05 Crear Activity para editar los datos del perfil
+        /*.setOnClickListener(v -> {
             Intent intent = new Intent(PerfilActivity.this, EditarPerfilActivity.class);
             startActivity(intent);
-        });
+        });*/
 
         btnCerrarSesion.setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();

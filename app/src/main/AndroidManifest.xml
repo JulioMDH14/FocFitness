@@ -33,6 +33,8 @@
         <activity android:name=".ConfirmarReservaActivity" />
         <activity android:name=".HorasActivity" />
         <activity android:name=".MisReservasActivity" />
+        <activity android:name=".PerfilActivity" />
+        <activity android:name=".CentroDeportivoActivity" />
     </application>
 
 </manifest>

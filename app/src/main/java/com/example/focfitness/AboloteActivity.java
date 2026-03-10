@@ -48,7 +48,7 @@ public class AboloteActivity extends AppCompatActivity {
         });
 
         btnCDeportivo.setOnClickListener(v -> {
-            Intent intent = new Intent(AboloteActivity.this, ReservasActivity.class);
+            Intent intent = new Intent(AboloteActivity.this, CentroDeportivoActivity.class);
             startActivity(intent);
         });
 
