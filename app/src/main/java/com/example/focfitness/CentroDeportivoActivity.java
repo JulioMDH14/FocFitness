@@ -38,7 +38,7 @@ public class CentroDeportivoActivity extends AppCompatActivity {
         });
 
         btnNormas.setOnClickListener(v -> {
-            Intent intent = new Intent(CentroDeportivoActivity.this, ConstruccionActivity.class);
+            Intent intent = new Intent(CentroDeportivoActivity.this, NormasActivity.class);
             startActivity(intent);
         });
     }
