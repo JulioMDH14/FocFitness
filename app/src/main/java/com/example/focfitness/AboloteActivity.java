@@ -23,19 +23,10 @@ public class AboloteActivity extends AppCompatActivity {
         btnGimnasio = findViewById(R.id.btnGimnasio);
         btnGaleria = findViewById(R.id.btnGaleria);
 
-        //TODO-04 Crear Activities de las diferentes secciones
-        /*
-        btnMenu.setOnClickListener(v -> {
-            Intent intent = new Intent(AboloteActivity.this, MenuActivity.class);
-            startActivity(intent);
-        });
-
-
         btnGimnasio.setOnClickListener(v -> {
-            Intent intent = new Intent(AboloteActivity.this, ReservasGimnasioActivity.class);
+            Intent intent = new Intent(AboloteActivity.this, GimnasioActivity.class);
             startActivity(intent);
         });
-        */
 
         btnPerfil.setOnClickListener(v -> {
             Intent intent = new Intent(AboloteActivity.this, PerfilActivity.class);

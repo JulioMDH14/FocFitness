@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".SeguimientoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_primary"
+        android:orientation="vertical"
+        android:padding="18dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Seguimiento"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="4dp">
+
+            <Button
+                android:id="@+id/btnDiaAnterior"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:text="&#60;"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:backgroundTint="#4466CC"
+                android:minWidth="0dp"
+                android:padding="0dp" />
+
+            <TextView
+                android:id="@+id/tvFechaHoy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="#CCFFFFFF"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/btnDiaSiguiente"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:text="&#62;"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:backgroundTint="#4466CC"
+                android:minWidth="0dp"
+                android:padding="0dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:background="@color/gray_light">
+
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ejercicio (ej: Press banca)"
+            android:background="@drawable/input_borde_azul"
+            android:padding="10dp"
+            android:inputType="text"
+            android:maxLines="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <EditText
+                android:id="@+id/etPeso"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Peso (kg)"
+                android:background="@drawable/input_borde_azul"
+                android:padding="10dp"
+                android:inputType="text"
+                android:maxLines="1"
+                android:layout_marginEnd="6dp" />
+
+            <EditText
+                android:id="@+id/etSeries"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Series (ej: 3x10)"
+                android:background="@drawable/input_borde_azul"
+                android:padding="10dp"
+                android:inputType="text"
+                android:maxLines="1"
+                android:layout_marginStart="6dp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAnadir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Añadir ejercicio"
+            android:backgroundTint="@color/blue_primary"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/seccionClases"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="#EFF6FF"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clases de hoy"
+            android:textColor="@color/blue_primary"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tvClasesHoy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#374151"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvVacio"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="No hay ejercicios este día"
+        android:textColor="@color/gray_mid"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/listaEjercicios"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@null"
+        android:padding="8dp"
+        android:clipToPadding="false" />
+
+</LinearLayout>

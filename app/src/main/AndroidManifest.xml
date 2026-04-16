@@ -36,6 +36,12 @@
         <activity android:name=".PerfilActivity" />
         <activity android:name=".CentroDeportivoActivity" />
         <activity android:name=".NormasActivity" />
+        <activity android:name=".GimnasioActivity" />
+        <activity android:name=".SeguimientoActivity" />
+        <activity android:name=".ReservaGimnasioActivity" />
+        <activity android:name=".ClasesActivity" />
+        <activity android:name=".RutinasActivity" />
+        <activity android:name=".EjerciciosRutinaActivity" />
     </application>
 
 </manifest>
