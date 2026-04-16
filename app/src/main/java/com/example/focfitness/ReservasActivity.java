@@ -11,8 +11,13 @@ import java.util.*;
 public class ReservasActivity extends AppCompatActivity {
 
     ListView listEspacios;
+    Spinner spinnerFiltro;
+
+    List<Map<String, Object>> todosEspacios = new ArrayList<>();
+    List<String> todosIds = new ArrayList<>();
     List<Map<String, Object>> listaEspacios = new ArrayList<>();
     List<String> listaIds = new ArrayList<>();
+
     DatabaseReference dbRef;
 
     private static final String DB_URL = "https://focfitness-55cab-default-rtdb.europe-west1.firebasedatabase.app";
@@ -23,24 +28,25 @@ public class ReservasActivity extends AppCompatActivity {
         setContentView(R.layout.activity_reservas);
 
         listEspacios = findViewById(R.id.listaEspacios);
+        spinnerFiltro = findViewById(R.id.spinnerFiltro);
         dbRef = FirebaseDatabase.getInstance(DB_URL).getReference("espacios_deportivos/albolote");
 
         dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-                listaEspacios.clear();
-                listaIds.clear();
+                todosEspacios.clear();
+                todosIds.clear();
 
                 for (DataSnapshot espacio : snapshot.getChildren()) {
                     Object cuota = espacio.child("cuotaMensual").getValue();
                     if (cuota != null && (Boolean) cuota) continue;
 
                     Map<String, Object> datos = (Map<String, Object>) espacio.getValue();
-                    listaEspacios.add(datos);
-                    listaIds.add(espacio.getKey());
+                    todosEspacios.add(datos);
+                    todosIds.add(espacio.getKey());
                 }
 
-                listEspacios.setAdapter(new EspacioAdapter());
+                configurarFiltro();
             }
 
             @Override
@@ -64,6 +70,69 @@ public class ReservasActivity extends AppCompatActivity {
             intent.putExtra("precioEspacio", precio);
             startActivity(intent);
         });
+    }
+
+    private static final Map<String, String> NOMBRES_TIPO = new HashMap<String, String>() {{
+        put("campo",    "Campo");
+        put("pabellon", "Pabellón");
+        put("piscina",  "Piscina");
+        put("pista",    "Pista");
+        put("gimnasio", "Gimnasio");
+    }};
+
+    private String nombreVisible(String tipo) {
+        String nombre = NOMBRES_TIPO.get(tipo);
+        return nombre != null ? nombre : tipo;
+    }
+
+    private void configurarFiltro() {
+        List<String> tiposFirebase = new ArrayList<>();
+        List<String> tiposVisibles = new ArrayList<>();
+        tiposFirebase.add("Todos");
+        tiposVisibles.add("Todos");
+
+        for (Map<String, Object> e : todosEspacios) {
+            String tipo = (String) e.get("tipo");
+            if (tipo != null && !tiposFirebase.contains(tipo)) {
+                tiposFirebase.add(tipo);
+                tiposVisibles.add(nombreVisible(tipo));
+            }
+        }
+
+        ArrayAdapter<String> adapterSpinner = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, tiposVisibles);
+        adapterSpinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerFiltro.setAdapter(adapterSpinner);
+
+        spinnerFiltro.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                aplicarFiltro(tiposFirebase.get(position));
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
+
+        aplicarFiltro("Todos");
+    }
+
+    private void aplicarFiltro(String tipo) {
+        listaEspacios.clear();
+        listaIds.clear();
+
+        for (int i = 0; i < todosEspacios.size(); i++) {
+            Map<String, Object> e = todosEspacios.get(i);
+            if (tipo.equals("Todos") || tipo.equals(e.get("tipo"))) {
+                listaEspacios.add(e);
+                listaIds.add(todosIds.get(i));
+            }
+        }
+
+        if (listEspacios.getAdapter() == null) {
+            listEspacios.setAdapter(new EspacioAdapter());
+        } else {
+            ((EspacioAdapter) listEspacios.getAdapter()).notifyDataSetChanged();
+        }
     }
 
     class EspacioAdapter extends BaseAdapter {
