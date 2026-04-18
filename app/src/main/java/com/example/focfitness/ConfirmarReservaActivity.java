@@ -3,6 +3,7 @@ package com.example.focfitness;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
+import android.view.View;
 import android.widget.*;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.*;
@@ -11,7 +12,7 @@ import java.util.*;
 
 public class ConfirmarReservaActivity extends AppCompatActivity {
 
-    TextView tvResumenEspacio, tvResumenFecha, tvResumenHora, tvResumenPrecio;
+    TextView tvResumenEspacio, tvResumenFecha, tvResumenHora;
     Button btnConfirmar, btnCancelar;
 
     String idEspacio, nombreEspacio, fecha, hora;
@@ -31,12 +32,17 @@ public class ConfirmarReservaActivity extends AppCompatActivity {
         tvResumenEspacio = findViewById(R.id.tvResumenEspacio);
         tvResumenFecha = findViewById(R.id.tvResumenFecha);
         tvResumenHora = findViewById(R.id.tvResumenHora);
-        tvResumenPrecio = findViewById(R.id.tvResumenPrecio);
         btnConfirmar = findViewById(R.id.btnConfirmar);
         btnCancelar = findViewById(R.id.btnCancelar);
 
         tvResumenEspacio.setText(nombreEspacio);
-        tvResumenPrecio.setText(String.format("%.2f€", precio));
+
+        if (precio <= 0) {
+            findViewById(R.id.filaPrecio).setVisibility(View.GONE);
+            findViewById(R.id.separadorPrecio).setVisibility(View.GONE);
+        } else {
+            ((TextView) findViewById(R.id.tvResumenPrecio)).setText(String.format("%.2f€", precio));
+        }
 
         try {
             SimpleDateFormat sdfIn = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
@@ -74,8 +80,9 @@ public class ConfirmarReservaActivity extends AppCompatActivity {
 
         dbRef.child(idReserva).setValue(reserva)
                 .addOnSuccessListener(unused -> {
-                    Toast.makeText(this, "¡Su reserva ha sido confirmada!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(ConfirmarReservaActivity.this, HomeActivity.class);
+                    Toast.makeText(this, "¡Reserva confirmada!", Toast.LENGTH_SHORT).show();
+                    Class<?> destino = "gimnasio".equals(idEspacio) ? GimnasioActivity.class : HomeActivity.class;
+                    Intent intent = new Intent(ConfirmarReservaActivity.this, destino);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                     finish();
