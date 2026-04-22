@@ -18,6 +18,8 @@ public class RegistrarseActivity extends AppCompatActivity {
     Button btnCrearCuenta, btnRetroceder;
     FirebaseAuth auth;
     DatabaseReference dbRef;
+    private static final String DB_URL = "https://focfitness-55cab-default-rtdb.europe-west1.firebasedatabase.app";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,16 +33,16 @@ public class RegistrarseActivity extends AppCompatActivity {
     btnCrearCuenta = findViewById(R.id.btnCrearCuenta);
     btnRetroceder = findViewById(R.id.btnRetroceder);
     auth = FirebaseAuth.getInstance();
-    dbRef = FirebaseDatabase.getInstance().getReference("usuarios");
+    dbRef = FirebaseDatabase.getInstance(DB_URL).getReference("usuarios");
 
     btnCrearCuenta.setOnClickListener(v -> {
-        String nombre = etNombre.getText().toString().trim();
+        String nombreCompleto = etNombre.getText().toString().trim();
         String correo = etCorreo.getText().toString().trim();
         String telefono = etTelefono.getText().toString().trim();
         String contrasena = etContrasena.getText().toString().trim();
         String confirmacion = etConfirmacion.getText().toString().trim();
 
-        if(nombre.isEmpty() || correo.isEmpty() || telefono.isEmpty() || contrasena.isEmpty() || confirmacion.isEmpty()){
+        if(nombreCompleto.isEmpty() || correo.isEmpty() || telefono.isEmpty() || contrasena.isEmpty() || confirmacion.isEmpty()){
             Toast.makeText(this,"Rellene todos los campos", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -53,20 +55,27 @@ public class RegistrarseActivity extends AppCompatActivity {
         auth.createUserWithEmailAndPassword(correo, contrasena)
                 .addOnSuccessListener(result -> {
                     String uid = result.getUser().getUid();
+                    String[] partesNombre = separarNombreYApellidos(nombreCompleto);
 
                     Map<String, Object> usuario = new HashMap<>();
-                    usuario.put("nombre", nombre);
+                    usuario.put("nombre", partesNombre[0]);
+                    usuario.put("apellidos", partesNombre[1]);
+                    usuario.put("nombreCompleto", nombreCompleto);
                     usuario.put("correo", correo);
                     usuario.put("telefono", telefono);
                     usuario.put("rol", "cliente");
 
-                    dbRef.child(uid).setValue(usuario);
-
-                    Toast.makeText(this, "Su cuenta se ha creado con éxito", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(RegistrarseActivity.this,InicioSesionActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                    finish();
+                    dbRef.child(uid).setValue(usuario)
+                            .addOnSuccessListener(unused -> {
+                                Toast.makeText(this, "Su cuenta se ha creado con éxito", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(RegistrarseActivity.this,InicioSesionActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent);
+                                finish();
+                            })
+                            .addOnFailureListener(e -> {
+                                Toast.makeText(this, "Error al guardar perfil: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            });
                 })
 
                 .addOnFailureListener(e -> {
@@ -77,4 +86,12 @@ public class RegistrarseActivity extends AppCompatActivity {
     btnRetroceder.setOnClickListener(v -> {
         finish();
     });
-    }}
+    }
+
+    private String[] separarNombreYApellidos(String nombreCompleto) {
+        String[] palabras = nombreCompleto.trim().split("\\s+", 2);
+        String nombre = palabras[0];
+        String apellidos = palabras.length > 1 ? palabras[1] : "";
+        return new String[]{nombre, apellidos};
+    }
+}

@@ -31,7 +31,7 @@ public class MaracenaActivity  extends AppCompatActivity {
         });
 
         btnPerfil.setOnClickListener(v -> {
-            Intent intent = new Intent(MaracenaActivity.this, ConstruccionActivity.class);
+            Intent intent = new Intent(MaracenaActivity.this, PerfilActivity.class);
             startActivity(intent);
         });
 

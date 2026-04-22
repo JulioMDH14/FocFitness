@@ -9,6 +9,8 @@ import android.widget.*;
 public class HomeActivity extends AppCompatActivity {
 
     FrameLayout btnAbolote, btnLaZubia, btnMaracena, btnArmilla;
+    LinearLayout btnPerfil;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +20,7 @@ public class HomeActivity extends AppCompatActivity {
         btnLaZubia = findViewById(R.id.btnLaZubia);
         btnMaracena = findViewById(R.id.btnMaracena);
         btnArmilla = findViewById(R.id.btnArmilla);
+        btnPerfil = findViewById(R.id.btnPerfil);
 
         //TODO-03 Crear las Activity de cada pueblo
 
@@ -41,6 +44,10 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        btnPerfil.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, PerfilActivity.class);
+            startActivity(intent);
+        });
 
     }
 }

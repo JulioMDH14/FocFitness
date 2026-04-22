@@ -30,7 +30,7 @@ public class ZubiaActivity extends AppCompatActivity {
         });
 
         btnPerfil.setOnClickListener(v -> {
-            Intent intent = new Intent(ZubiaActivity.this, ConstruccionActivity.class);
+            Intent intent = new Intent(ZubiaActivity.this, PerfilActivity.class);
             startActivity(intent);
         });
 

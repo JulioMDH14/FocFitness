@@ -30,7 +30,7 @@ public class ArmillaActivity extends AppCompatActivity {
         });
 
         btnPerfil.setOnClickListener(v -> {
-            Intent intent = new Intent(ArmillaActivity.this, ConstruccionActivity.class);
+            Intent intent = new Intent(ArmillaActivity.this, PerfilActivity.class);
             startActivity(intent);
         });
 
