@@ -26,11 +26,16 @@
         android:padding="8dp"
         android:background="@color/gray_light">
 
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
         <LinearLayout
             android:id="@+id/btnPerfil"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginStart="300dp"
+            android:layout_marginEnd="8dp"
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:clickable="true"
@@ -46,11 +51,10 @@
                 android:contentDescription="Perfil" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
                 android:shadowColor="@color/black"
-                android:shadowRadius="2"
                 android:text="Perfil"
                 android:textColor="@color/blue_primary"
                 android:textSize="20sp"
@@ -100,7 +104,7 @@
                 android:text="Albolote"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="34sp"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
         </FrameLayout>
@@ -137,7 +141,7 @@
                 android:text="La Zubia"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="34sp"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
         </FrameLayout>
@@ -174,7 +178,7 @@
                 android:text="Maracena"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="34sp"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
         </FrameLayout>
@@ -211,7 +215,7 @@
                 android:text="Armilla"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="34sp"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
         </FrameLayout>

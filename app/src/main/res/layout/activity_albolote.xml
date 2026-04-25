@@ -43,33 +43,36 @@
         android:orientation="horizontal"
         android:padding="8dp">
 
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
         <LinearLayout
             android:id="@+id/btnPerfil"
-            android:layout_width="384dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginStart="300dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:clickable="true"
             android:focusable="true"
-            android:background="?attr/selectableItemBackgroundBorderless">
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imgHeaderPerfil"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@drawable/foto_perfil"
+                android:contentDescription="Perfil"
                 android:scaleType="centerCrop"
-                android:contentDescription="Perfil" />
+                android:src="@drawable/foto_perfil" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
                 android:shadowColor="@color/black"
-                android:shadowRadius="2"
                 android:text="Perfil"
-                android:textAlignment="textStart"
                 android:textColor="@color/blue_primary"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -83,29 +86,29 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:columnCount="2"
-        android:rowCount="2"
-        android:padding="12dp">
+        android:padding="12dp"
+        android:rowCount="2">
 
         <FrameLayout
             android:id="@+id/btnReservas"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_columnWeight="1"
             android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
             android:layout_margin="6dp"
             android:background="@drawable/btn_pueblo"
             android:clickable="true"
-            android:focusable="true"
             android:clipToOutline="true"
+            android:focusable="true"
             android:outlineProvider="background">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/reserva"
-                android:scaleType="centerCrop"
+                android:alpha="0.5"
                 android:contentDescription="Reservas"
-                android:alpha="0.5"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/reserva" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -127,22 +130,22 @@
             android:id="@+id/btnCDeportivo"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_columnWeight="1"
             android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
             android:layout_margin="6dp"
             android:background="@drawable/btn_pueblo"
             android:clickable="true"
-            android:focusable="true"
             android:clipToOutline="true"
+            android:focusable="true"
             android:outlineProvider="background">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/cendeportivo"
-                android:scaleType="centerCrop"
+                android:alpha="0.5"
                 android:contentDescription="Centro Deportivo"
-                android:alpha="0.5"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/cendeportivo" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -164,22 +167,22 @@
             android:id="@+id/btnGimnasio"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_columnWeight="1"
             android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
             android:layout_margin="6dp"
             android:background="@drawable/btn_pueblo"
             android:clickable="true"
-            android:focusable="true"
             android:clipToOutline="true"
+            android:focusable="true"
             android:outlineProvider="background">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/gimnasio"
-                android:scaleType="centerCrop"
+                android:alpha="0.5"
                 android:contentDescription="Gimnasio"
-                android:alpha="0.5"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/gimnasio" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -201,22 +204,22 @@
             android:id="@+id/btnGaleria"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_columnWeight="1"
             android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
             android:layout_margin="6dp"
             android:background="@drawable/btn_pueblo"
             android:clickable="true"
-            android:focusable="true"
             android:clipToOutline="true"
+            android:focusable="true"
             android:outlineProvider="background">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/galeria"
-                android:scaleType="centerCrop"
+                android:alpha="0.5"
                 android:contentDescription="Galeria"
-                android:alpha="0.5"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/galeria" />
 
             <TextView
                 android:layout_width="match_parent"

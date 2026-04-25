@@ -42,11 +42,16 @@
         android:padding="8dp"
         android:background="@color/gray_light">
 
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
         <LinearLayout
             android:id="@+id/btnPerfil"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginStart="300dp"
+            android:layout_marginEnd="8dp"
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:clickable="true"
@@ -62,9 +67,10 @@
                 android:contentDescription="Perfil" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
+                android:shadowColor="@color/black"
                 android:text="Perfil"
                 android:textColor="@color/blue_primary"
                 android:textSize="20sp"
@@ -108,7 +114,7 @@
                     android:alpha="0.5"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:background="#00FFFFFF"
@@ -117,8 +123,9 @@
                     android:shadowDy="4"
                     android:shadowRadius="10"
                     android:text="Reservar pistas"
+                    android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="20sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
             </FrameLayout>
@@ -153,7 +160,7 @@
                     android:shadowRadius="10"
                     android:text="Calendario"
                     android:textColor="@color/white"
-                    android:textSize="20sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
             </FrameLayout>
@@ -192,7 +199,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textColorLink="@color/blue_primary"
-                android:textSize="34sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
         </FrameLayout>

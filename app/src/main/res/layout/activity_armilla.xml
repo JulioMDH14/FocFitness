@@ -42,11 +42,16 @@
         android:orientation="horizontal"
         android:padding="8dp">
 
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
         <LinearLayout
             android:id="@+id/btnPerfil"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginStart="300dp"
+            android:layout_marginEnd="8dp"
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:clickable="true"
@@ -62,13 +67,11 @@
                 android:contentDescription="Perfil" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
                 android:shadowColor="@color/black"
-                android:shadowRadius="2"
                 android:text="Perfil"
-                android:textAlignment="center"
                 android:textColor="@color/blue_primary"
                 android:textSize="20sp"
                 android:textStyle="bold" />
