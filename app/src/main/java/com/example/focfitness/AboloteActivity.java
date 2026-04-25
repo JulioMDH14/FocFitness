@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.widget.*;
 public class AboloteActivity extends AppCompatActivity {
 
-    ImageView btnMenu;
     LinearLayout btnPerfil;
     FrameLayout btnReservas, btnCDeportivo, btnGimnasio, btnGaleria;
 
@@ -16,7 +15,6 @@ public class AboloteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_albolote);
 
-        btnMenu = findViewById(R.id.btnMenu);
         btnPerfil = findViewById(R.id.btnPerfil);
         btnReservas = findViewById(R.id.btnReservas);
         btnCDeportivo = findViewById(R.id.btnCDeportivo);
@@ -47,5 +45,11 @@ public class AboloteActivity extends AppCompatActivity {
             Intent intent = new Intent(AboloteActivity.this, GaleriaActivity.class);
             startActivity(intent);
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        PerfilHeaderHelper.cargarFotoPerfil(this);
     }
 }

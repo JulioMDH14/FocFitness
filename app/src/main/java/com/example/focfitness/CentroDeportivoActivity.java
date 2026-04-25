@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.*;
 public class CentroDeportivoActivity extends AppCompatActivity {
-    ImageButton btnMenu;
     LinearLayout btnPerfil;
     android.widget.FrameLayout btnReservas, btnCalendario, btnNormas;
 
@@ -15,7 +14,6 @@ public class CentroDeportivoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_centro_deportivo);
 
-        btnMenu = findViewById(R.id.btnMenu);
         btnPerfil = findViewById(R.id.btnPerfil);
         btnReservas = findViewById(R.id.btnReservas);
         btnCalendario = findViewById(R.id.btnCalendario);
@@ -41,5 +39,11 @@ public class CentroDeportivoActivity extends AppCompatActivity {
             Intent intent = new Intent(CentroDeportivoActivity.this, NormasActivity.class);
             startActivity(intent);
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        PerfilHeaderHelper.cargarFotoPerfil(this);
     }
 }

@@ -38,15 +38,6 @@
         android:padding="8dp"
         android:background="@color/gray_light">
 
-        <ImageButton
-            android:id="@+id/btnMenu"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/menu_desplegable"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Menú Desplegable"
-            android:scaleType="centerInside" />
-
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -62,11 +53,12 @@
             android:focusable="true"
             android:background="?attr/selectableItemBackgroundBorderless">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgHeaderPerfil"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/foto_perfil"
-                android:scaleType="centerInside"
+                android:scaleType="centerCrop"
                 android:contentDescription="Perfil" />
 
             <TextView

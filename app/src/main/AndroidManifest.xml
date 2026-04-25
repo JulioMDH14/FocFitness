@@ -40,6 +40,7 @@
         <activity android:name=".HorasActivity" />
         <activity android:name=".MisReservasActivity" />
         <activity android:name=".PerfilActivity" />
+        <activity android:name=".EditarPerfilActivity" />
         <activity android:name=".CentroDeportivoActivity" />
         <activity android:name=".NormasActivity" />
         <activity android:name=".GimnasioActivity" />

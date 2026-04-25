@@ -35,7 +35,6 @@ public class FullscreenActivity extends AppCompatActivity {
 
         mostrarImagen();
 
-        // Flecha derecha ➡️
         btnDerecha.setOnClickListener(v -> {
             if (posicion < imagenes.length - 1) {
                 posicion++;
@@ -43,7 +42,6 @@ public class FullscreenActivity extends AppCompatActivity {
             }
         });
 
-        // Flecha izquierda ⬅️
         btnIzquierda.setOnClickListener(v -> {
             if (posicion > 0) {
                 posicion--;

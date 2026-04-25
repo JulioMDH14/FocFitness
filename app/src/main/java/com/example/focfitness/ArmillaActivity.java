@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.widget.*;
 public class ArmillaActivity extends AppCompatActivity {
 
-    ImageView btnMenu;
     LinearLayout btnPerfil;
     FrameLayout btnReservas, btnCDeportivo, btnGimnasio, btnGaleria;
 
@@ -16,18 +15,11 @@ public class ArmillaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_armilla);
 
-        btnMenu = findViewById(R.id.btnMenu);
         btnPerfil = findViewById(R.id.btnPerfil);
         btnReservas = findViewById(R.id.btnReservas);
         btnCDeportivo = findViewById(R.id.btnCDeportivo);
         btnGimnasio = findViewById(R.id.btnGimnasio);
         btnGaleria = findViewById(R.id.btnGaleria);
-
-
-        btnMenu.setOnClickListener(v -> {
-            Intent intent = new Intent(ArmillaActivity.this, ConstruccionActivity.class);
-            startActivity(intent);
-        });
 
         btnPerfil.setOnClickListener(v -> {
             Intent intent = new Intent(ArmillaActivity.this, PerfilActivity.class);
@@ -53,5 +45,11 @@ public class ArmillaActivity extends AppCompatActivity {
             Intent intent = new Intent(ArmillaActivity.this, ConstruccionActivity.class);
             startActivity(intent);
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        PerfilHeaderHelper.cargarFotoPerfil(this);
     }
 }
