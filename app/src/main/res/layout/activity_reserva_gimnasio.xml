@@ -29,16 +29,11 @@
 
             <TextView
                 android:id="@+id/tvNombreGim"
-                android:layout_width="411dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:shadowColor="@color/black"
-                android:shadowDx="4"
-                android:shadowDy="4"
-                android:shadowRadius="6"
                 android:text="Gimnasio"
-                android:textAlignment="center"
                 android:textColor="@color/blue_primary"
-                android:textSize="38sp"
+                android:textSize="32sp"
                 android:textStyle="bold" />
 
         </LinearLayout>

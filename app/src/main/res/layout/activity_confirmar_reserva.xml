@@ -183,12 +183,11 @@
                 android:id="@+id/btnCancelar"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:background="@drawable/bg_crear"
-                android:backgroundTint="#FF0101"
                 android:text="Cancelar"
-                android:textColor="@color/white"
+                android:textColor="@color/gray_mid"
                 android:textSize="14sp"
-                android:textStyle="bold" />
+                android:background="@drawable/bg_crear"
+                android:backgroundTint="@null" />
 
         </LinearLayout>
 

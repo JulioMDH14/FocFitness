@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".ArmillaActivity">
 
     <FrameLayout
@@ -14,21 +15,16 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:alpha="0.5"
             android:contentDescription="Cabecera Pueblo"
             android:scaleType="centerCrop"
-            android:src="@drawable/bnd_armilla" />
+            android:src="@drawable/bnd_armilla"
+            android:alpha="0.5"/>
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:shadowColor="@color/black"
-            android:shadowDx="4"
-            android:shadowDy="4"
-            android:shadowRadius="6"
             android:text="ARMILLA"
-            android:textAlignment="center"
             android:textColor="@color/blue_primary"
             android:textSize="40sp"
             android:textStyle="bold" />
@@ -38,37 +34,40 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/gray_light"
         android:orientation="horizontal"
-        android:padding="8dp">
+        android:padding="8dp"
+        android:background="@color/gray_light">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
 
         <LinearLayout
             android:id="@+id/btnPerfil"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
             android:clickable="true"
             android:focusable="true"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:background="?attr/selectableItemBackgroundBorderless">
 
-            <ImageView
-                android:layout_width="315dp"
-                android:layout_height="32dp"
-                android:contentDescription="Perfil"
-                android:scaleType="fitEnd"
-                android:src="@drawable/foto_perfil" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgHeaderPerfil"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/foto_perfil"
+                android:scaleType="centerCrop"
+                android:contentDescription="Perfil" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
-                android:shadowColor="@color/black"
-                android:shadowRadius="2"
                 android:text="Perfil"
-                android:textAlignment="center"
                 android:textColor="@color/blue_primary"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -80,42 +79,37 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:columnCount="2"
-        android:padding="12dp"
-        android:rowCount="2">
+        android:rowCount="2"
+        android:padding="12dp">
 
         <FrameLayout
             android:id="@+id/btnReservas"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:layout_margin="6dp"
             android:background="@drawable/btn_pueblo"
             android:clickable="true"
-            android:clipToOutline="true"
             android:focusable="true"
+            android:clipToOutline="true"
             android:outlineProvider="background">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:alpha="0.5"
-                android:contentDescription="Reservas"
+                android:src="@drawable/reserva"
                 android:scaleType="centerCrop"
-                android:src="@drawable/reserva" />
+                android:contentDescription="Reservas"
+                android:alpha="0.5"/>
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:shadowColor="@color/black"
-                android:shadowDx="4"
-                android:shadowDy="4"
-                android:shadowRadius="10"
-                android:text="Mis Reservas"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="22sp"
+                android:text="RESERVAS"
+                android:textColor="@color/blue_primary"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
         </FrameLayout>
@@ -124,36 +118,32 @@
             android:id="@+id/btnCDeportivo"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:layout_margin="6dp"
             android:background="@drawable/btn_pueblo"
             android:clickable="true"
-            android:clipToOutline="true"
             android:focusable="true"
+            android:clipToOutline="true"
             android:outlineProvider="background">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:alpha="0.5"
-                android:contentDescription="Centro Deportivo"
+                android:src="@drawable/cendeportivo"
                 android:scaleType="centerCrop"
-                android:src="@drawable/cendeportivo" />
+                android:contentDescription="Centro Deportivo"
+                android:alpha="0.5"/>
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:shadowColor="@color/black"
-                android:shadowDx="4"
-                android:shadowDy="4"
-                android:shadowRadius="10"
-                android:text="Centro Deportivo"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+                android:layout_height="match_parent"
+                android:text="CENTRO DEPORTIVO"
+                android:textColor="@color/blue_primary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textAlignment="center"/>
 
         </FrameLayout>
 
@@ -161,35 +151,30 @@
             android:id="@+id/btnGimnasio"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:layout_margin="6dp"
             android:background="@drawable/btn_pueblo"
             android:clickable="true"
-            android:clipToOutline="true"
             android:focusable="true"
+            android:clipToOutline="true"
             android:outlineProvider="background">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:alpha="0.5"
-                android:contentDescription="Gimnasio"
+                android:src="@drawable/gimnasio"
                 android:scaleType="centerCrop"
-                android:src="@drawable/gimnasio" />
+                android:contentDescription="Gimnasio"
+                android:alpha="0.5"/>
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:shadowColor="@color/black"
-                android:shadowDx="4"
-                android:shadowDy="4"
-                android:shadowRadius="10"
-                android:text="Gimnasio"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="22sp"
+                android:text="GIMNASIO"
+                android:textColor="@color/blue_primary"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
         </FrameLayout>
@@ -198,35 +183,30 @@
             android:id="@+id/btnGaleria"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:layout_margin="6dp"
             android:background="@drawable/btn_pueblo"
             android:clickable="true"
-            android:clipToOutline="true"
             android:focusable="true"
+            android:clipToOutline="true"
             android:outlineProvider="background">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:alpha="0.5"
-                android:contentDescription="Galeria"
+                android:src="@drawable/galeria"
                 android:scaleType="centerCrop"
-                android:src="@drawable/galeria" />
+                android:contentDescription="Galeria"
+                android:alpha="0.5"/>
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:shadowColor="@color/black"
-                android:shadowDx="4"
-                android:shadowDy="4"
-                android:shadowRadius="10"
-                android:text="Galería"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="22sp"
+                android:text="GALERÍA"
+                android:textColor="@color/blue_primary"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
         </FrameLayout>

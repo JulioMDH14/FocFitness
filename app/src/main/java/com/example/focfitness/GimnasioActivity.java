@@ -7,7 +7,6 @@ import android.widget.*;
 
 public class GimnasioActivity extends AppCompatActivity {
 
-    ImageButton btnMenu;
     LinearLayout btnPerfil;
     android.widget.FrameLayout btnReservar, btnClases, btnSeguimiento, btnRutinas;
 
@@ -46,5 +45,11 @@ public class GimnasioActivity extends AppCompatActivity {
             Intent intent = new Intent(GimnasioActivity.this, RutinasActivity.class);
             startActivity(intent);
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        PerfilHeaderHelper.cargarFotoPerfil(this);
     }
 }

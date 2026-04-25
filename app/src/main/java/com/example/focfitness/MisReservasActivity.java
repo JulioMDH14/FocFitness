@@ -143,22 +143,16 @@ public class MisReservasActivity extends AppCompatActivity {
 
             if ("cancelada".equals(estado)) {
                 tvEstado.setText("Cancelada");
-                tvEstado.setTextColor(Color.WHITE);
-                tvEstado.setBackgroundTintList(
-                        android.content.res.ColorStateList.valueOf(Color.parseColor("#DC2626"))
-                );
+                tvEstado.setTextColor(Color.parseColor("#DC2626"));
+                tvEstado.setBackgroundColor(Color.parseColor("#FEE2E2"));
             } else if (esPasada) {
                 tvEstado.setText("Completada");
-                tvEstado.setTextColor(Color.WHITE);
-                tvEstado.setBackgroundTintList(
-                        android.content.res.ColorStateList.valueOf(Color.parseColor("#6B7280"))
-                );
+                tvEstado.setTextColor(Color.parseColor("#6B7280"));
+                tvEstado.setBackgroundColor(Color.parseColor("#F3F4F6"));
             } else {
                 tvEstado.setText("Confirmada");
-                tvEstado.setTextColor(Color.WHITE);
-                tvEstado.setBackgroundTintList(
-                        android.content.res.ColorStateList.valueOf(Color.parseColor("#16A34A"))
-                );
+                tvEstado.setTextColor(Color.parseColor("#1D4ED8"));
+                tvEstado.setBackgroundColor(Color.parseColor("#DBEAFE"));
             }
 
             if ("cancelada".equals(estado) || esPasada) {
@@ -168,24 +162,15 @@ public class MisReservasActivity extends AppCompatActivity {
                 btnCancelar.setEnabled(true);
                 btnCancelar.setAlpha(1f);
                 btnCancelar.setOnClickListener(v -> {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(MisReservasActivity.this);
-                    View view = LayoutInflater.from(MisReservasActivity.this).inflate(R.layout.dialog_cancelar, null);
-                    builder.setView(view);
-                    AlertDialog dialog = builder.create();
-                    dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-
-                    view.findViewById(R.id.btnConfirmar).setOnClickListener(btn -> {
-                        dbRef.child(idReserva).child("estado").setValue("cancelada")
-                                .addOnSuccessListener(unused -> {
-                                    Toast.makeText(MisReservasActivity.this, "Su reserva ha sido cancelada", Toast.LENGTH_SHORT).show();
-                                    recreate();
-                                });
-                        dialog.dismiss();
-                    });
-
-                    view.findViewById(R.id.btnCancelar).setOnClickListener(btn -> dialog.dismiss());
-
-                    dialog.show();
+                    new AlertDialog.Builder(MisReservasActivity.this)
+                            .setTitle("Cancelar reserva")
+                            .setMessage("¿Seguro que quieres cancelar esta reserva?")
+                            .setPositiveButton("Sí, cancelar", (dialog, which) -> {
+                                dbRef.child(idReserva).child("estado").setValue("cancelada").addOnSuccessListener(unused -> {
+                                            Toast.makeText(MisReservasActivity.this, "Su reserva ha sido cancelada", Toast.LENGTH_SHORT).show();
+                                            recreate();
+                                        });
+                            }).setNegativeButton("No", null).show();
                 });
             }
             return convertView;
