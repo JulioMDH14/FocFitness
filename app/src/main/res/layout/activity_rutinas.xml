@@ -30,7 +30,7 @@
             android:gravity="center"
             android:text="Elige una categoría"
             android:textColor="#CCFFFFFF"
-            android:textSize="13sp" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 
@@ -64,14 +64,19 @@
                 android:alpha="0.5"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TREN SUPERIOR"
-                android:textColor="@color/blue_primary"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:gravity="center" />
+                android:gravity="center"
+                android:shadowColor="@color/black"
+                android:shadowDx="4"
+                android:shadowDy="4"
+                android:shadowRadius="10"
+                android:text="Tren Superior"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
         </FrameLayout>
 
@@ -97,14 +102,19 @@
                 android:alpha="0.5"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TREN INFERIOR"
-                android:textColor="@color/blue_primary"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:gravity="center" />
+                android:gravity="center"
+                android:shadowColor="@color/black"
+                android:shadowDx="4"
+                android:shadowDy="4"
+                android:shadowRadius="10"
+                android:text="Tren Inferior"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
         </FrameLayout>
 
@@ -130,12 +140,17 @@
                 android:alpha="0.5"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="PECHO"
-                android:textColor="@color/blue_primary"
-                android:textSize="14sp"
+                android:shadowColor="@color/black"
+                android:shadowDx="4"
+                android:shadowDy="4"
+                android:shadowRadius="10"
+                android:text="Pecho"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
         </FrameLayout>
@@ -162,12 +177,17 @@
                 android:alpha="0.5"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="ESPALDA"
-                android:textColor="@color/blue_primary"
-                android:textSize="14sp"
+                android:shadowColor="@color/black"
+                android:shadowDx="4"
+                android:shadowDy="4"
+                android:shadowRadius="10"
+                android:text="Espalda"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
         </FrameLayout>
@@ -194,12 +214,17 @@
                 android:alpha="0.5"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="CARDIO"
-                android:textColor="@color/blue_primary"
-                android:textSize="14sp"
+                android:shadowColor="@color/black"
+                android:shadowDx="4"
+                android:shadowDy="4"
+                android:shadowRadius="10"
+                android:text="Cardio"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
         </FrameLayout>
@@ -226,12 +251,17 @@
                 android:alpha="0.5"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="CORE"
-                android:textColor="@color/blue_primary"
-                android:textSize="14sp"
+                android:shadowColor="@color/black"
+                android:shadowDx="4"
+                android:shadowDy="4"
+                android:shadowRadius="10"
+                android:text="Core"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
         </FrameLayout>

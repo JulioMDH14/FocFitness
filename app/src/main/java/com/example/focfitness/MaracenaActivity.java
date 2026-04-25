@@ -8,6 +8,7 @@ import android.widget.*;
 
 public class MaracenaActivity  extends AppCompatActivity {
 
+    ImageView btnMenu;
     LinearLayout btnPerfil;
     FrameLayout btnReservas, btnCDeportivo, btnGimnasio, btnGaleria;
 
@@ -21,6 +22,12 @@ public class MaracenaActivity  extends AppCompatActivity {
         btnCDeportivo = findViewById(R.id.btnCDeportivo);
         btnGimnasio = findViewById(R.id.btnGimnasio);
         btnGaleria = findViewById(R.id.btnGaleria);
+
+
+        btnMenu.setOnClickListener(v -> {
+            Intent intent = new Intent(MaracenaActivity.this, ConstruccionActivity.class);
+            startActivity(intent);
+        });
 
         btnPerfil.setOnClickListener(v -> {
             Intent intent = new Intent(MaracenaActivity.this, PerfilActivity.class);
@@ -46,11 +53,5 @@ public class MaracenaActivity  extends AppCompatActivity {
             Intent intent = new Intent(MaracenaActivity.this, ConstruccionActivity.class);
             startActivity(intent);
         });
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        PerfilHeaderHelper.cargarFotoPerfil(this);
     }
 }

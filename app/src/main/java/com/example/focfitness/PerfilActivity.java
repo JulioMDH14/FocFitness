@@ -2,20 +2,15 @@ package com.example.focfitness;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Base64;
 import android.widget.*;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.*;
-import com.squareup.picasso.Picasso;
 
 public class PerfilActivity extends AppCompatActivity {
 
-    ImageView imgPerfil;
-    TextView tvNombrePerfil, tvCorreoPerfil;
+    TextView tvAvatar, tvNombrePerfil, tvCorreoPerfil;
     TextView tvDatosNombre, tvDatosApellidos, tvDatosCorreo, tvDatosTelefono;
     Button btnEditarPerfil, btnCerrarSesion;
 
@@ -26,7 +21,7 @@ public class PerfilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
-        imgPerfil = findViewById(R.id.imgPerfil);
+        tvAvatar = findViewById(R.id.tvAvatar);
         tvNombrePerfil = findViewById(R.id.tvNombrePerfil);
         tvCorreoPerfil = findViewById(R.id.tvCorreoPerfil);
         tvDatosNombre = findViewById(R.id.tvDatosNombre);
@@ -36,27 +31,6 @@ public class PerfilActivity extends AppCompatActivity {
         btnEditarPerfil = findViewById(R.id.btnEditarPerfil);
         btnCerrarSesion = findViewById(R.id.btnCerrarSesion);
 
-        btnEditarPerfil.setOnClickListener(v -> {
-            Intent intent = new Intent(PerfilActivity.this, EditarPerfilActivity.class);
-            startActivity(intent);
-        });
-
-        btnCerrarSesion.setOnClickListener(v -> {
-            FirebaseAuth.getInstance().signOut();
-            Intent intent = new Intent(PerfilActivity.this, InicioSesionActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-            finish();
-        });
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        cargarPerfil();
-    }
-
-    private void cargarPerfil() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user == null) {
             Intent intent = new Intent(PerfilActivity.this, InicioSesionActivity.class);
@@ -72,49 +46,29 @@ public class PerfilActivity extends AppCompatActivity {
         tvCorreoPerfil.setText(email);
         tvDatosCorreo.setText(email);
 
-        FirebaseDatabase.getInstance(DB_URL).getReference("usuarios").child(uid)
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-
+        FirebaseDatabase.getInstance(DB_URL).getReference("usuarios").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot snapshot) {
                         if (!snapshot.exists()) {
                             mostrarPerfilBasico(email);
+                            Toast.makeText(PerfilActivity.this, "No hay datos de perfil guardados para este usuario", Toast.LENGTH_SHORT).show();
                             return;
                         }
 
-                        String nombre = obtenerTexto(snapshot, "nombre");
-                        String apellidos = obtenerTexto(snapshot, "apellidos");
-                        String nombreCompleto = obtenerTexto(snapshot, "nombreCompleto");
-                        String correo = obtenerTexto(snapshot, "correo");
-                        String telefono = obtenerTexto(snapshot, "telefono");
-                        String imagen = obtenerTexto(snapshot, "imagen");
-                        String imagenBase64 = obtenerTexto(snapshot, "imagenBase64");
+                        String nombre = (String) snapshot.child("nombre").getValue();
+                        String apellidos = (String) snapshot.child("apellidos").getValue();
+                        String telefono = (String) snapshot.child("telefono").getValue();
 
-                        if (nombre.isEmpty() && !nombreCompleto.isEmpty()) {
-                            String[] partesNombre = separarNombreYApellidos(nombreCompleto);
-                            nombre = partesNombre[0];
-                            apellidos = partesNombre[1];
+                        if (nombre != null && !nombre.isEmpty()) {
+                            tvNombrePerfil.setText(nombre + (apellidos != null && !apellidos.isEmpty() ? " " + apellidos : ""));
+                            tvAvatar.setText(String.valueOf(nombre.charAt(0)).toUpperCase());
+                            tvDatosNombre.setText(nombre);
+                        } else {
+                            mostrarPerfilBasico(email);
                         }
 
-                        if (correo.isEmpty()) {
-                            correo = email != null ? email : "-";
-                        }
-
-                        String nombreVisible = !nombreCompleto.isEmpty()
-                                ? nombreCompleto
-                                : (nombre + (!apellidos.isEmpty() ? " " + apellidos : "")).trim();
-
-                        if (nombreVisible.isEmpty()) {
-                            nombreVisible = correo.contains("@") ? correo.substring(0, correo.indexOf("@")) : "Usuario";
-                        }
-
-                        cargarImagenPerfil(imagenBase64, imagen);
-                        tvNombrePerfil.setText(nombreVisible);
-                        tvCorreoPerfil.setText(correo);
-                        tvDatosNombre.setText(!nombre.isEmpty() ? nombre : nombreVisible);
-                        tvDatosApellidos.setText(!apellidos.isEmpty() ? apellidos : "-");
-                        tvDatosCorreo.setText(correo);
-                        tvDatosTelefono.setText(!telefono.isEmpty() ? telefono : "-");
+                        tvDatosApellidos.setText(apellidos != null && !apellidos.isEmpty() ? apellidos : "-");
+                        tvDatosTelefono.setText(telefono != null && !telefono.isEmpty() ? telefono : "-");
                     }
 
                     @Override
@@ -122,53 +76,28 @@ public class PerfilActivity extends AppCompatActivity {
                         Toast.makeText(PerfilActivity.this, "Error al cargar datos", Toast.LENGTH_SHORT).show();
                     }
                 });
+
+        //TODO-05 Crear Activity para editar los datos del perfil
+        /*.setOnClickListener(v -> {
+            Intent intent = new Intent(PerfilActivity.this, EditarPerfilActivity.class);
+            startActivity(intent);
+        });*/
+
+        btnCerrarSesion.setOnClickListener(v -> {
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(PerfilActivity.this, InicioSesionActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
+        });
     }
 
     private void mostrarPerfilBasico(String email) {
         String nombreBasico = email != null && email.contains("@") ? email.substring(0, email.indexOf("@")) : "Usuario";
         tvNombrePerfil.setText(nombreBasico);
-        tvCorreoPerfil.setText(email != null ? email : "-");
+        tvAvatar.setText(String.valueOf(nombreBasico.charAt(0)).toUpperCase());
         tvDatosNombre.setText(nombreBasico);
         tvDatosApellidos.setText("-");
-        tvDatosCorreo.setText(email != null ? email : "-");
         tvDatosTelefono.setText("-");
-        imgPerfil.setImageResource(R.drawable.ic_user);
-    }
-
-    private String obtenerTexto(DataSnapshot snapshot, String campo) {
-        String valor = snapshot.child(campo).getValue(String.class);
-        return valor != null ? valor.trim() : "";
-    }
-
-    private void cargarImagenPerfil(String imagenBase64, String urlImagen) {
-        if (!imagenBase64.isEmpty()) {
-            try {
-                byte[] bytesImagen = Base64.decode(imagenBase64, Base64.NO_WRAP);
-                Bitmap bitmap = BitmapFactory.decodeByteArray(bytesImagen, 0, bytesImagen.length);
-                imgPerfil.setImageBitmap(bitmap);
-                return;
-            } catch (IllegalArgumentException e) {
-                imgPerfil.setImageResource(R.drawable.ic_user);
-                return;
-            }
-        }
-
-        if (urlImagen.isEmpty()) {
-            imgPerfil.setImageResource(R.drawable.ic_user);
-            return;
-        }
-
-        Picasso.get()
-                .load(urlImagen)
-                .placeholder(R.drawable.ic_user)
-                .error(R.drawable.ic_user)
-                .into(imgPerfil);
-    }
-
-    private String[] separarNombreYApellidos(String nombreCompleto) {
-        String[] palabras = nombreCompleto.trim().split("\\s+", 2);
-        String nombre = palabras[0];
-        String apellidos = palabras.length > 1 ? palabras[1] : "";
-        return new String[]{nombre, apellidos};
     }
 }

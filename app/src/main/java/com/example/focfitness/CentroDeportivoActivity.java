@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.*;
 public class CentroDeportivoActivity extends AppCompatActivity {
+    ImageButton btnMenu;
     LinearLayout btnPerfil;
     android.widget.FrameLayout btnReservas, btnCalendario, btnNormas;
 
@@ -39,11 +40,5 @@ public class CentroDeportivoActivity extends AppCompatActivity {
             Intent intent = new Intent(CentroDeportivoActivity.this, NormasActivity.class);
             startActivity(intent);
         });
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        PerfilHeaderHelper.cargarFotoPerfil(this);
     }
 }

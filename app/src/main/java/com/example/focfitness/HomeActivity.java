@@ -50,10 +50,4 @@ public class HomeActivity extends AppCompatActivity {
         });
 
     }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        PerfilHeaderHelper.cargarFotoPerfil(this);
-    }
 }

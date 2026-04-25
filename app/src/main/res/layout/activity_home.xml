@@ -26,36 +26,32 @@
         android:padding="8dp"
         android:background="@color/gray_light">
 
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
         <LinearLayout
             android:id="@+id/btnPerfil"
-            android:layout_width="wrap_content"
+            android:layout_width="385dp"
             android:layout_height="40dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:clickable="true"
             android:focusable="true"
-            android:background="?attr/selectableItemBackgroundBorderless">
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imgHeaderPerfil"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@drawable/foto_perfil"
-                android:scaleType="centerCrop"
-                android:contentDescription="Perfil" />
+            <ImageView
+                android:layout_width="315dp"
+                android:layout_height="32dp"
+                android:contentDescription="Perfil"
+                android:scaleType="fitEnd"
+                android:src="@drawable/foto_perfil" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
+                android:shadowColor="@color/black"
+                android:shadowRadius="2"
                 android:text="Perfil"
                 android:textColor="@color/blue_primary"
-                android:textSize="15sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -92,12 +88,17 @@
                 android:alpha="0.5"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="ALBOLOTE"
-                android:textColor="@color/blue_primary"
-                android:textSize="24sp"
+                android:shadowColor="@color/black"
+                android:shadowDx="4"
+                android:shadowDy="4"
+                android:shadowRadius="10"
+                android:text="Albolote"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="34sp"
                 android:textStyle="bold" />
 
         </FrameLayout>
@@ -124,12 +125,17 @@
                 android:alpha="0.5"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="LA ZUBIA"
-                android:textColor="@color/blue_primary"
-                android:textSize="24sp"
+                android:shadowColor="@color/black"
+                android:shadowDx="4"
+                android:shadowDy="4"
+                android:shadowRadius="10"
+                android:text="La Zubia"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="34sp"
                 android:textStyle="bold" />
 
         </FrameLayout>
@@ -156,12 +162,17 @@
                 android:alpha="0.5"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="MARACENA"
-                android:textColor="@color/blue_primary"
-                android:textSize="24sp"
+                android:shadowColor="@color/black"
+                android:shadowDx="4"
+                android:shadowDy="4"
+                android:shadowRadius="10"
+                android:text="Maracena"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="34sp"
                 android:textStyle="bold" />
 
         </FrameLayout>
@@ -188,12 +199,17 @@
                 android:alpha="0.5"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="ARMILLA"
-                android:textColor="@color/blue_primary"
-                android:textSize="24sp"
+                android:shadowColor="@color/black"
+                android:shadowDx="4"
+                android:shadowDy="4"
+                android:shadowRadius="10"
+                android:text="Armilla"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="34sp"
                 android:textStyle="bold" />
 
         </FrameLayout>

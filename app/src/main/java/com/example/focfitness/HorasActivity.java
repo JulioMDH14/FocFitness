@@ -200,13 +200,19 @@ public class HorasActivity extends AppCompatActivity {
                 tvHora.setTextColor(Color.WHITE);
                 tvEstado.setText("Seleccionada");
                 tvEstado.setTextColor(Color.WHITE);
+                tvEstado.setBackgroundTintList(
+                        android.content.res.ColorStateList.valueOf(Color.parseColor("#F97316"))
+                );
                 convertView.setAlpha(1f);
                 convertView.setBackgroundColor(Color.parseColor("#1D4ED8"));
                 convertView.setClickable(true);
             } else {
                 tvHora.setTextColor(Color.parseColor("#1D4ED8"));
                 tvEstado.setText("Disponible");
-                tvEstado.setTextColor(Color.parseColor("#1D4ED8"));
+                tvEstado.setTextColor(Color.WHITE);
+                tvEstado.setBackgroundTintList(
+                        android.content.res.ColorStateList.valueOf(Color.parseColor("#4CAF50"))
+                );
                 convertView.setAlpha(1f);
                 convertView.setBackgroundColor(Color.WHITE);
                 convertView.setClickable(true);

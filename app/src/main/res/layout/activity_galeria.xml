@@ -43,8 +43,7 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/futbol_albolote"
                     android:scaleType="centerCrop"
-                    android:contentDescription="Pista de Fútbol"
-                    android:id="@+id/img1"/>
+                    android:contentDescription="Pista de Fútbol" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -73,8 +72,7 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/bpx1"
                     android:scaleType="centerCrop"
-                    android:contentDescription="Gimnasio"
-                    android:id="@+id/img2" />
+                    android:contentDescription="Gimnasio" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -103,8 +101,7 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/pabellon_albolote"
                     android:scaleType="centerCrop"
-                    android:contentDescription="Pabellón"
-                    android:id="@+id/img3" />
+                    android:contentDescription="Pabellón" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -133,8 +130,7 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/bpx3"
                     android:scaleType="centerCrop"
-                    android:contentDescription="Piscina"
-                    android:id="@+id/img4"/>
+                    android:contentDescription="Piscina" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -163,8 +159,7 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/tenis_albolote"
                     android:scaleType="centerCrop"
-                    android:contentDescription="Pista de Tenis"
-                    android:id="@+id/img5"/>
+                    android:contentDescription="Pista de Tenis" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -193,8 +188,7 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/vestuarios_albolote"
                     android:scaleType="centerCrop"
-                    android:contentDescription="Vestuarios"
-                    android:id="@+id/img6"/>
+                    android:contentDescription="Vestuarios" />
 
                 <TextView
                     android:layout_width="match_parent"

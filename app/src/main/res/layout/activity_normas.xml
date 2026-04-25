@@ -49,10 +49,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:lineSpacingMultiplier="1.5"
                     android:text="Es obligatorio presentar el carnet de socio o la confirmación de reserva para acceder a las instalaciones."
-                    android:textSize="14sp"
                     android:textColor="#374151"
-                    android:lineSpacingMultiplier="1.5"/>
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
@@ -75,10 +75,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:lineSpacingMultiplier="1.5"
                     android:text="El uso de calzado deportivo adecuado es obligatorio en todas las pistas e instalaciones interiores."
-                    android:textSize="14sp"
                     android:textColor="#374151"
-                    android:lineSpacingMultiplier="1.5"/>
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
