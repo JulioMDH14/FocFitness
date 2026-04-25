@@ -24,9 +24,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="CENTRO DEPORTIVO"
+            android:shadowColor="@color/black"
+            android:shadowDx="4"
+            android:shadowDy="4"
+            android:shadowRadius="6"
+            android:text="Centro Deportivo"
             android:textColor="@color/blue_primary"
-            android:textSize="28sp"
+            android:textSize="34sp"
             android:textStyle="bold" />
 
     </FrameLayout>
@@ -38,15 +42,11 @@
         android:padding="8dp"
         android:background="@color/gray_light">
 
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
         <LinearLayout
             android:id="@+id/btnPerfil"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
+            android:layout_marginStart="300dp"
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:clickable="true"
@@ -55,14 +55,14 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imgHeaderPerfil"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
                 android:src="@drawable/foto_perfil"
                 android:scaleType="centerCrop"
                 android:contentDescription="Perfil" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
                 android:text="Perfil"
@@ -111,9 +111,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="RESERVAR PISTAS"
-                    android:textColor="@color/blue_primary"
-                    android:textSize="18sp"
+                    android:background="#00FFFFFF"
+                    android:shadowColor="#000000"
+                    android:shadowDx="4"
+                    android:shadowDy="4"
+                    android:shadowRadius="10"
+                    android:text="Reservar pistas"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
             </FrameLayout>
@@ -142,9 +147,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="CALENDARIO"
-                    android:textColor="@color/blue_primary"
-                    android:textSize="18sp"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="4"
+                    android:shadowDy="4"
+                    android:shadowRadius="10"
+                    android:text="Calendario"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
             </FrameLayout>
@@ -172,15 +181,19 @@
                 android:alpha="0.5"/>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="NORMAS DEL CENTRO DEPORTIVO"
-                android:textColor="@color/blue_primary"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:textAlignment="center"/>
-
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:shadowColor="@color/black"
+                android:shadowDx="4"
+                android:shadowDy="4"
+                android:shadowRadius="15"
+                android:text="Normas del Centro Deportivo"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textColorLink="@color/blue_primary"
+                android:textSize="34sp"
+                android:textStyle="bold" />
 
         </FrameLayout>
 

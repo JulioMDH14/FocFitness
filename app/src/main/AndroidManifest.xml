@@ -29,7 +29,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".RegistrarseActivity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".AboloteActivity" />
+        <activity android:name=".AlboloteActivity" />
         <activity android:name=".MaracenaActivity" />
         <activity android:name=".ZubiaActivity" />
         <activity android:name=".ArmillaActivity" />

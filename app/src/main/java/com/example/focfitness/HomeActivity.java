@@ -8,7 +8,7 @@ import android.widget.*;
 
 public class HomeActivity extends AppCompatActivity {
 
-    FrameLayout btnAbolote, btnLaZubia, btnMaracena, btnArmilla;
+    FrameLayout btnAlbolote, btnLaZubia, btnMaracena, btnArmilla;
     LinearLayout btnPerfil;
 
     @Override
@@ -16,16 +16,14 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        btnAbolote = findViewById(R.id.btnAlbolote);
+        btnAlbolote = findViewById(R.id.btnAlbolote);
         btnLaZubia = findViewById(R.id.btnLaZubia);
         btnMaracena = findViewById(R.id.btnMaracena);
         btnArmilla = findViewById(R.id.btnArmilla);
         btnPerfil = findViewById(R.id.btnPerfil);
 
-        //TODO-03 Crear las Activity de cada pueblo
-
-        btnAbolote.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, AboloteActivity.class);
+        btnAlbolote.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, AlboloteActivity.class);
             startActivity(intent);
         });
 

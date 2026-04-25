@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.*;
-public class AboloteActivity extends AppCompatActivity {
+public class AlboloteActivity extends AppCompatActivity {
 
     LinearLayout btnPerfil;
     FrameLayout btnReservas, btnCDeportivo, btnGimnasio, btnGaleria;
@@ -22,27 +22,27 @@ public class AboloteActivity extends AppCompatActivity {
         btnGaleria = findViewById(R.id.btnGaleria);
 
         btnGimnasio.setOnClickListener(v -> {
-            Intent intent = new Intent(AboloteActivity.this, GimnasioActivity.class);
+            Intent intent = new Intent(AlboloteActivity.this, GimnasioActivity.class);
             startActivity(intent);
         });
 
         btnPerfil.setOnClickListener(v -> {
-            Intent intent = new Intent(AboloteActivity.this, PerfilActivity.class);
+            Intent intent = new Intent(AlboloteActivity.this, PerfilActivity.class);
             startActivity(intent);
         });
 
         btnReservas.setOnClickListener(v -> {
-            Intent intent = new Intent(AboloteActivity.this, MisReservasActivity.class);
+            Intent intent = new Intent(AlboloteActivity.this, MisReservasActivity.class);
             startActivity(intent);
         });
 
         btnCDeportivo.setOnClickListener(v -> {
-            Intent intent = new Intent(AboloteActivity.this, CentroDeportivoActivity.class);
+            Intent intent = new Intent(AlboloteActivity.this, CentroDeportivoActivity.class);
             startActivity(intent);
         });
 
         btnGaleria.setOnClickListener(v -> {
-            Intent intent = new Intent(AboloteActivity.this, GaleriaActivity.class);
+            Intent intent = new Intent(AlboloteActivity.this, GaleriaActivity.class);
             startActivity(intent);
         });
     }

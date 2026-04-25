@@ -71,11 +71,11 @@ public class ConfirmarReservaActivity extends AppCompatActivity {
         Map<String, Object> reserva = new HashMap<>();
         reserva.put("idUsuario", uid);
         reserva.put("idEspacio", idEspacio);
-        reserva.put("pueblo", "albolote");
+        reserva.put("pueblo", "Albolote");
         reserva.put("fecha", fecha);
         reserva.put("horaInicio", hora);
         reserva.put("horaFin", horaFin);
-        reserva.put("estado", "confirmada");
+        reserva.put("estado", "Confirmada");
         reserva.put("precio", precio);
 
         dbRef.child(idReserva).setValue(reserva)

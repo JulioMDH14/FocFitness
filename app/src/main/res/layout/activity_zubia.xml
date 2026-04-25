@@ -21,10 +21,15 @@
             android:alpha="0.5"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:shadowColor="@color/black"
+            android:shadowDx="4"
+            android:shadowDy="4"
+            android:shadowRadius="6"
             android:text="LA ZUBIA"
+            android:textAlignment="center"
             android:textColor="@color/blue_primary"
             android:textSize="40sp"
             android:textStyle="bold" />
@@ -38,15 +43,11 @@
         android:padding="8dp"
         android:background="@color/gray_light">
 
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
         <LinearLayout
             android:id="@+id/btnPerfil"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
+            android:layout_marginStart="300dp"
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:clickable="true"
@@ -55,19 +56,21 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imgHeaderPerfil"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
                 android:src="@drawable/foto_perfil"
                 android:scaleType="centerCrop"
                 android:contentDescription="Perfil" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
+                android:shadowColor="@color/black"
+                android:shadowRadius="2"
                 android:text="Perfil"
                 android:textColor="@color/blue_primary"
-                android:textSize="15sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -104,12 +107,17 @@
                 android:alpha="0.5"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="RESERVAS"
-                android:textColor="@color/blue_primary"
-                android:textSize="18sp"
+                android:shadowColor="@color/black"
+                android:shadowDx="4"
+                android:shadowDy="4"
+                android:shadowRadius="10"
+                android:text="Mis Reservas"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
         </FrameLayout>
@@ -137,13 +145,17 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="CENTRO DEPORTIVO"
-                android:textColor="@color/blue_primary"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:textAlignment="center"/>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:shadowColor="@color/black"
+                android:shadowDx="4"
+                android:shadowDy="4"
+                android:shadowRadius="10"
+                android:text="Centro Deportivo"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
         </FrameLayout>
 
@@ -169,12 +181,17 @@
                 android:alpha="0.5"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="GIMNASIO"
-                android:textColor="@color/blue_primary"
-                android:textSize="18sp"
+                android:shadowColor="@color/black"
+                android:shadowDx="4"
+                android:shadowDy="4"
+                android:shadowRadius="10"
+                android:text="Gimnasio"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
         </FrameLayout>
@@ -201,12 +218,17 @@
                 android:alpha="0.5"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="GALERÍA"
-                android:textColor="@color/blue_primary"
-                android:textSize="18sp"
+                android:shadowColor="@color/black"
+                android:shadowDx="4"
+                android:shadowDy="4"
+                android:shadowRadius="10"
+                android:text="Galería"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
         </FrameLayout>
